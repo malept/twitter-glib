@@ -30,6 +30,7 @@ AC_INIT([twitter-glib],
         [],
         [twitter-glib])
 
+AC_CONFIG_MACRO_DIR([autotools])
 AC_CONFIG_SRCDIR([twitter-glib/twitter-glib.h])
 
 AM_INIT_AUTOMAKE([1.10])
@@ -132,7 +133,7 @@ AC_ARG_ENABLE([maintainer-flags],
               enable_maintainer_flags=maintainer_flags_default)
 
 if test "x$enable_maintainer_flags" = "xyes"; then
-  TWITTER_MAINTAINER_CFLAGS="-Werror -Wall -Wshadow -Wcast-align -Wno-uninitialized -Wempty-body -Wformat-security -Winit-self"
+  AS_COMPILER_FLAGS([TWITTER_MAINTAINER_CFLAGS], ["-Werror -Wall -Wshadow -Wcast-align -Wno-uninitialized -Wempty-body -Wformat-security -Winit-self"])
 fi
 
 AC_SUBST(TWITTER_MAINTAINER_CFLAGS)

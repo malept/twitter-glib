@@ -4,6 +4,8 @@ if ENABLE_GLIB_TEST
 SUBDIRS += tests
 endif
 
+ACLOCAL_AMFLAGS = -I autotools
+
 DIST_SUBDIRS = twitter-glib doc tests
 
 pcfiles = twitter-glib-$(TWITTER_API_VERSION).pc
